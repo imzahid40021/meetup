@@ -1,0 +1,42 @@
+<div class="container mt-5 border rounded p-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 text-center">
+      <h1>Welcome to Our Meetup Site</h1>
+      <p class="lead">Connect with people who share your interests.</p>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-8 offset-md-2">
+      <h2>About Us</h2>
+      <p>
+        Our meetup site connects people with shared interests, allowing them to join groups, participate in events, and make meaningful connections.
+      </p>
+    </div>
+  </div>
+  <div class="col-md-8 offset-md-2">
+    <%= link_to 'Groups', groups_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="container mt-5 custom-border">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2>Upload CSV File</h2>
+        <ul>
+          The headers of the CSV should be following
+          <li>First Name</li>
+          <li>Last Name</li>
+          <li>Group Name</li>
+          <li>Role in Group</li>
+        </ul>
+        <%= form_tag(upload_csv_users_path, method: :post, multipart: true) do %>
+          <div class="form-group">
+            <label for="csv_file">Select CSV File:</label>
+            <input type="file" accept=".csv" class="form-control-file" id="csv_file" name="csv_file">
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

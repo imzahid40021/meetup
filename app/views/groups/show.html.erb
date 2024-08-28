@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Group Details</h5>
+          <div class="card-text">
+            <p><strong>Name:</strong> <%= @group.name %></p>
+            <% if @group.users.present? %>
+              <p><strong>Users:</strong></p>
+              <ul>
+                <% @group.user_groups.each do |user_group| %>
+                  <li><strong><%= user_group.user.first_name %> <%= user_group.user.last_name %></strong> - <%= user_group.role.name %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <%= link_to "Edit", edit_group_path(@group), class: "btn btn-primary mr-2" %>
+          <%= link_to "Back", groups_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
