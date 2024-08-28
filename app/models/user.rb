@@ -15,8 +15,8 @@ class User < ApplicationRecord
   has_many :groups, through: :user_groups
   has_many :roles, through: :user_groups
 
-  scope :organizers, lambda { |group_id, role_id|
-    joins(user_groups: :role)
-      .where(user_groups: { group_id: group_id }, roles: { name: 'organizer' })
+  scope :organizers, lambda { |group|
+    joins(:user_groups).where(user_groups: { group_id: group, role_name: "organizer", user_id: group.users })
+                       .group(:id)
   }
 end 

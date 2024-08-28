@@ -3,6 +3,7 @@
 # Table name: user_groups
 #
 #  id         :bigint           not null, primary key
+#  role_name  :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  group_id   :bigint           not null

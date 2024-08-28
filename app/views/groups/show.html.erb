@@ -10,7 +10,7 @@
               <p><strong>Users:</strong></p>
               <ul>
                 <% @group.user_groups.each do |user_group| %>
-                  <li><strong><%= user_group.user.first_name %> <%= user_group.user.last_name %></strong> - <%= user_group.role.name %></li>
+                  <li><strong><%= user_group.user.first_name %> <%= user_group.user.last_name %></strong> - <%= user_group.role.name.humanize %></li>
                 <% end %>
               </ul>
             <% end %>

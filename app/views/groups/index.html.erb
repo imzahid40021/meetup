@@ -20,13 +20,12 @@
           <td><%= group.id%></td>
           <td><%= link_to group.name, group_path(group) %></td>
           <td>
-            <%= group.users.organizers_in_group(group.id).pluck(:first_name).join(', ') %>
+            <%= group_oraganizers(group) %>
           </td>
           <td class="d-flex gap-2">
             <a href="<%= edit_group_path(group) %>" class="btn btn-sm btn-primary">Edit</a>
             <%= button_to 'Delete', group_path(group), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
           </td>
-
         </tr>
       <% end %>
     </tbody>

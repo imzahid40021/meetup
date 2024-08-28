@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_28_174340) do
     t.bigint "user_id", null: false
     t.bigint "role_id", null: false
     t.bigint "group_id", null: false
+    t.string "role_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_user_groups_on_group_id"
